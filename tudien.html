@@ -5,6 +5,31 @@
     <title>Title</title>
 </head>
 <body>
-
+<input type="text" id="haha">
+<input type="button" value="Translate" onclick="translates()">
+<p id="result"></p>
 </body>
+<script>
+    let engArrs = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"]
+    let vieArrs = ["Một", "Hai", "Ba", "Bốn", "Năm", "Sáu", "Bảy", "Tám", "Chín", "Mười"]
+    function translates() {
+        let word = document.getElementById("haha").value;
+        let result;
+        let count = 0;
+        for (let i = 0; i < engArrs.length; i++) {
+            if (word.toLowerCase() === engArrs[i].toLowerCase()) {
+                result = vieArrs[i];
+                count++;
+                break
+            }
+        }
+        if (count == 0){
+            document.getElementById("result").innerHTML = "Sai rồi"
+        } else {
+            document.getElementById("result").innerHTML = result
+        }
+
+    }
+
+</script>
 </html>
